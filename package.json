@@ -28,6 +28,7 @@
     "next": "^15.3.2",
     "open-props-scss": "^0.8.0",
     "payload": "^3.37.0",
+    "radix-ui": "^1.4.2",
     "react": "19.0.0",
     "react-chrono": "^2.7.1",
     "react-dom": "19.0.0",
