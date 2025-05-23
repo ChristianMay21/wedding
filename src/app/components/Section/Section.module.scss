@@ -1,0 +1,60 @@
+@use '/src/scss/open-props/index.scss' as op;
+
+.section {
+  font-family: op.$font-classical-humanist;
+  @media (op.$md-n-above) {
+    padding-inline: op.$size-10;
+  }
+  @media (op.$md-n-below) {
+    padding-inline: op.$size-5;
+  }
+}
+
+.headingSection {
+  display: flex;
+  padding-top: op.$size-7;
+  align-items: center;
+  padding-bottom: op.$size-5;
+  border-bottom: 2px solid oklab(21% -0.00316128 -0.0338527 / 0.1);
+  justify-content: space-between;
+}
+
+.scrollTarget {
+  position: relative;
+  top: 50px;
+}
+
+.heading {
+  font-size: op.$font-size-4;
+  color: #1d0937;
+  @media (op.$md-n-above) {
+    font-size: op.$font-size-5;
+  }
+}
+
+.caretContainer {
+  position: relative;
+  top: 18px;
+  margin-left: op.$size-5;
+  transition: rotate 600ms;
+  rotate: 0deg;
+  &[data-rotate-caret='true'] {
+    rotate: 180deg;
+  }
+}
+
+.contents {
+  &[data-open='false'] {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+  }
+  &[data-open='true'] {
+    height: calc-size(auto);
+  }
+}
+
+.scrollTarget {
+  position: relative;
+  top: 200px;
+}

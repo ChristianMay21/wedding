@@ -1,0 +1,120 @@
+@use '/src/scss/open-props/index.scss' as op;
+
+.date {
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1d0937;
+  padding-top: op.$size-4;
+  background-color: op.$violet-0;
+  font-family: op.$font-industrial;
+  padding-bottom: op.$size-3;
+  border-radius: var(--content-border-radius);
+  position: relative;
+  z-index: 2;
+
+  @media (op.$md-n-below) {
+    padding-inline: op.$size-2;
+  }
+}
+
+.eventName {
+  font-size: op.$font-size-7;
+  font-weight: 700;
+  margin-top: op.$size-3;
+  line-height: op.$font-lineheight-2;
+  @media (op.$md-n-below) {
+    font-size: op.$font-size-5;
+  }
+  text-align: center;
+}
+
+.gettingMarried {
+  font-size: op.$font-size-3;
+  color: #493174;
+  margin-top: -4px;
+  font-weight: 300;
+}
+
+.infoRow {
+  margin-top: op.$size-5;
+}
+
+.details {
+  font-size: op.$font-size-3;
+  vertical-align: middle;
+}
+
+.detailItem {
+  @media (op.$md-n-below) {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+  }
+}
+
+.iconWrapper {
+  margin-right: op.$size-2;
+  position: relative;
+  top: 5px;
+  margin-left: op.$size-5;
+  @media (op.$md-n-below) {
+    text-align: right;
+  }
+}
+
+.detailText {
+  @media (op.$md-n-below) {
+  }
+}
+
+.rsvp {
+  margin-top: op.$size-5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rsvpLink {
+  display: block;
+  font-size: op.$font-size-3;
+  text-align: center;
+  border-radius: 24px;
+  background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+  color: white;
+  text-decoration: none;
+  padding-block: 6px;
+  padding-inline: 12px;
+  box-shadow: op.$shadow-3;
+  position: relative;
+  overflow: hidden;
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+    transition: all 0.475s;
+  }
+}
+
+.rsvpLinkContent {
+  position: relative;
+  z-index: 1;
+}
+
+.rsvpDate {
+  margin-top: op.$size-4;
+}

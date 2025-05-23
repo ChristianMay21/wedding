@@ -28,7 +28,8 @@
       ],
       "@payload-config": [
         "./src/payload.config.ts"
-      ]
+      ],
+      "react-chrono": ["./node_modules/react-chrono/dist/react-chrono.d.ts"]
     },
     "target": "ES2022",
   },

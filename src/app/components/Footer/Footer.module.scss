@@ -1,0 +1,16 @@
+@use '/src/scss/open-props/index.scss' as op;
+
+.footer {
+  background-color: #492f5d;
+  color: #f8f0fc;
+  font-family: op.$font-classical-humanist;
+  padding-block: op.$size-3;
+  text-align: center;
+  font-weight: 600;
+}
+
+.mailto {
+  text-decoration: underline;
+  color: #6c59ed;
+  margin-left: op.$size-2;
+}

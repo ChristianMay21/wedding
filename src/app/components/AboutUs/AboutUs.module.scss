@@ -1,0 +1,16 @@
+@use '/src/scss/open-props/index.scss' as op;
+
+.aboutUs {
+  font-family: op.$font-handwritten;
+}
+
+.heading {
+  font-family: op.$font-handwritten;
+  text-align: center;
+  padding-top: op.$size-4;
+}
+
+.scrollTarget {
+  position: relative;
+  top: 200px;
+}

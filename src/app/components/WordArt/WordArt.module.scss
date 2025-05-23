@@ -1,0 +1,147 @@
+@use '/node_modules/open-props-scss/index.scss' as op;
+
+@function create-shadow-list($depth, $color) {
+  $shadow-list: ();
+
+  @for $i from 0 through $depth {
+    @if $i == 0 {
+      $shadow-list: append($shadow-list, $color 0px 0px, comma);
+    } @else {
+      $shadow-list: append($shadow-list, $color #{-$i}px #{$i}px, comma);
+    }
+  }
+
+  @return $shadow-list;
+}
+
+// 50, 10px, color, 15px
+
+@function create-stepped-shadow-list(
+  $steps,
+  $step-size,
+  $color,
+  $blur,
+  $initial-x: 0,
+  $initial-y: 0
+) {
+  $shadow-list: ();
+
+  @for $i from 1 through $steps {
+    $x-offset: $initial-x + (-$i * $step-size);
+    $y-offset: $initial-y + (($i - 1) * $step-size);
+    $shadow-list: append($shadow-list, $color #{$x-offset} #{$y-offset} #{$blur}, comma);
+  }
+
+  @return $shadow-list;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+$background-color: #492f5d;
+$font-color: op.$gray-1;
+$font-size-desktop: 4rem;
+$font-size-mobile: 2rem;
+$line-height: 0.3;
+$container-width: 100%;
+$text-color-one: #a55587;
+$text-color-two: #56447f;
+$text-color-three: #6a2d56;
+
+.block {
+  background: $font-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  --font-size: #{$font-size-desktop};
+  z-index: 2;
+  @media (op.$md-n-below) {
+    --font-size: #{$font-size-mobile};
+  }
+}
+
+.scrollTarget {
+  position: relative;
+  top: 50px;
+}
+
+.textContainer {
+  width: $container-width;
+  overflow: hidden;
+  background-color: $background-color;
+  text-shadow: $font-color 1px 1px 0;
+}
+
+.block,
+.textContainer,
+.lineOne,
+.lineTwo,
+.lineThree {
+  position: relative;
+  padding: 0;
+  width: $container-width;
+  font-weight: 600;
+  line-height: $line-height;
+  text-align: center;
+  font-size: var(--font-size);
+  color: $font-color;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lineOne,
+.lineTwo,
+.lineThree {
+  transform: translateX(0);
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  transform: translateX(-200%);
+  animation-name: slide-in-left;
+}
+
+.lineOne {
+  text-shadow: join(
+    create-shadow-list(1200, $text-color-one),
+    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    comma
+  );
+  //font-size: 3rem;
+  //@media (op.$md-n-below) {
+  //  font-size: 1.5rem;
+  //}
+}
+
+.lineTwo {
+  text-shadow: join(
+    create-shadow-list(1200, $text-color-two),
+    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    comma
+  );
+  animation-delay: 600ms;
+}
+
+.lineThree {
+  text-shadow: join(
+    create-shadow-list(1200, $text-color-three),
+    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    comma
+  );
+  padding-bottom: var(--word-art-overlap);
+  animation-delay: 1200ms;
+}
+
+.text {
+  margin-top: 0;
+}

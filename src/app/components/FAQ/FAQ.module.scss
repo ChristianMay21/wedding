@@ -1,0 +1,42 @@
+@use '/src/scss/open-props/index.scss' as op;
+
+.questionList {
+  margin-top: op.$size-9;
+}
+
+.questionItem {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  column-gap: op.$size-8;
+  row-gap: op.$size-3;
+  border-bottom: 1px solid oklab(0.21 -0.00316128 -0.0338527 / 0.1);
+  padding-bottom: op.$size-8;
+  margin-top: op.$size-4;
+
+  @media (op.$md-n-below) {
+    grid-template-columns: unset;
+    padding-bottom: op.$size-4;
+  }
+}
+
+.question {
+  font-size: op.$font-size-3;
+  font-weight: 600;
+}
+
+.answer {
+  font-size: op.$font-size-3;
+  line-height: op.$font-lineheight-3;
+  margin-left: unset;
+
+  @media (op.$md-n-below) {
+    grid-template-columns: unset;
+  }
+
+  & p {
+    margin-top: 0;
+  }
+  & a[href] {
+    color: op.$purple-8;
+  }
+}

@@ -1,3 +1,5 @@
+@import '/src/scss/common';
+
 /* Box sizing rules */
 *,
 *::before,
@@ -10,6 +12,11 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  margin: 0;
+}
+
+body {
+  margin: 0;
 }
 
 /* Remove default margin in favour of better control in authored CSS */

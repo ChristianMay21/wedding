@@ -1,0 +1,155 @@
+@use '/src/scss/open-props/index.scss' as op;
+@import '/src/scss/_common.scss';
+
+.scrim {
+  position: fixed;
+  background: rgba(0, 0, 0, 0);
+
+  height: 100vh;
+  width: 0%;
+  transition-property: background-color, width;
+  transition-timing-function: linear, linear;
+  transition-duration: 600ms, 0ms;
+  transition-delay: 0ms, 600ms;
+  z-index: 4;
+
+  &[data-show='true'] {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    transition-delay: 0ms, 0ms;
+  }
+}
+
+.hamburger {
+  position: fixed;
+  background-color: op.$purple-0;
+  $offset: op.$size-3;
+  right: $offset;
+  top: $offset;
+  $diameter: 40px;
+  width: $diameter;
+  height: $diameter;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: op.$shadow-4;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 5;
+
+  &:hover {
+    box-shadow: op.$shadow-5;
+  }
+
+  // Only show on mobile
+  @media (op.$md-n-above) {
+    display: none;
+  }
+}
+
+.navRoot {
+  position: fixed;
+  width: 100%;
+  font-family: op.$font-classical-humanist;
+  z-index: 4;
+
+  @media (op.$md-n-above) {
+    background-color: rgba(55, 33, 94, 0);
+    transition:
+      background-color 600ms linear,
+      box-shadow 600ms linear;
+    &[data-scrolled='true'] {
+      background-color: rgba(55, 33, 94, 100);
+      box-shadow: op.$shadow-4;
+    }
+  }
+  // By default, hide on mobile
+  @media (op.$md-n-below) {
+    right: 0;
+    height: 100vh;
+    transition: width 600ms ease-in-out;
+    background-color: op.$stone-2;
+    &[data-open='false'] {
+      width: 1px; //Keeping a non-zero width to guard against screen readers hiding the nav
+      right: -1px; //Put the hidden menu off-screen
+    }
+    &[data-open='true'] {
+      width: 300px;
+    }
+  }
+}
+
+.mobileNavHeader {
+  border-bottom: 1px solid oklab(0.21 -0.00316128 -0.0338527 / 0.1);
+  padding-left: 40px;
+  padding-top: op.$size-9;
+  padding-bottom: op.$size-6;
+  font-size: op.$font-size-2;
+
+  @media (op.$md-n-above) {
+    @include visually-hidden;
+  }
+}
+
+.mobileNavHeading {
+  font-weight: 600;
+  margin-top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mobileNavDate {
+  margin-top: 0;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mobileNavLocation {
+  margin-top: 0;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.navList {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: op.$size-2;
+  padding-left: 0;
+
+  @media (op.$md-n-below) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 40px;
+  }
+}
+
+.navItem {
+  font-family: op.$font-industrial;
+  display: block;
+  color: op.$stone-2;
+  font-weight: 550;
+
+  @media (op.$md-n-below) {
+    padding-block: op.$size-2;
+  }
+}
+
+.navLink {
+  color: op.$stone-2;
+  text-decoration: none;
+  font-weight: 400;
+  @media (op.$md-n-below) {
+    color: op.$stone-12;
+    font-size: op.$font-size-4;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

@@ -1,7 +1,23 @@
 @use '/node_modules/open-props-scss/index.scss' as op;
 
 .main {
-  background-color: op.$gray-1;
-  height: 100px;
-  width: 100px;
+  --word-art-overlap: 1500px;
+}
+
+.contentSection {
+  padding-inline: max(op.$size-6, calc((100% - 1020px) / 2));
+  background-color: #492f5d;
+  position: relative;
+  margin-top: calc(-1 * (var(--word-art-overlap) - #{op.$size-3}));
+  --content-border-radius: #{op.$size-6};
+}
+
+.content {
+  background-color: white;
+  position: relative;
+  z-index: 3;
+  margin-top: op.$size-7;
+
+  border-top-left-radius: var(--content-border-radius);
+  border-top-right-radius: var(--content-border-radius);
 }
