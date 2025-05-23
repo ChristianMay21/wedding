@@ -1,4 +1,5 @@
 // storage-adapter-import-placeholder
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
@@ -34,5 +35,13 @@ export default buildConfig({
   },
   db: vercelPostgresAdapter(),
   sharp,
-  plugins: [importExportPlugin({})],
+  plugins: [
+    importExportPlugin({}),
+    vercelBlobStorage({
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || '',
+    }),
+  ],
 })
