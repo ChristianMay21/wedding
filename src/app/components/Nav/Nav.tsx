@@ -72,7 +72,7 @@ const Nav: React.FC = () => {
           </NavigationMenu.Item>
           <NavigationMenu.Item className={styles.navItem} onClick={handleLinkClick}>
             <NavigationMenu.Link className={styles.navLink} href="#schedule">
-              Frequently Asked Questions
+              FAQ
             </NavigationMenu.Link>
           </NavigationMenu.Item>
           <NavigationMenu.Item className={styles.navItem} onClick={handleLinkClick}>
