@@ -76,7 +76,10 @@ const Nav: React.FC = () => {
             </NavigationMenu.Link>
           </NavigationMenu.Item>
           <NavigationMenu.Item className={styles.navItem} onClick={handleLinkClick}>
-            <NavigationMenu.Link className={styles.navLink} href="#registry">
+            <NavigationMenu.Link
+              className={styles.navLink}
+              href="https://withjoy.com/kim-and-christian-sep-26/registry "
+            >
               Registry
             </NavigationMenu.Link>
           </NavigationMenu.Item>
