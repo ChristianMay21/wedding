@@ -28,6 +28,7 @@
   font-size: op.$font-size-3;
   line-height: op.$font-lineheight-3;
   margin-left: unset;
+  font-size: op.$font-size-2;
 
   @media (op.$md-n-below) {
     grid-template-columns: unset;
