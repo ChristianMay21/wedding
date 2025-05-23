@@ -15,16 +15,19 @@ const Intro: React.FC<IntroProps> = (props) => {
       <div className={styles.infoRow}>
         <div className={styles.details}>
           <span className={styles.detailItem}>
-            <span className={styles.iconWrapper}>
+            <span className={`${styles.iconWrapper} ${styles.mapWrapper}`}>
               <MapPin strokeWidth={2.5} size={24} color={'#6c59ed'}></MapPin>
             </span>
-            <span className={styles.detailText}>The Hippodrome, Richmond, VA</span>
+            <span className={styles.detailText}>
+              The Hippodrome,
+              <br className={styles.forceBreak} /> Richmond, VA
+            </span>
           </span>
           <span className={styles.detailItem}>
             <span className={styles.iconWrapper}>
               <Calendar strokeWidth={2.5} size={24} color={'#6c59ed'} />
             </span>
-            September 6, 2025
+            <span className={styles.detailText}>September 6, 2025</span>
           </span>
         </div>
       </div>

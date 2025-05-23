@@ -50,8 +50,21 @@
 
 .detailItem {
   @media (op.$md-n-below) {
-    display: grid;
-    grid-template-columns: 30% 1fr;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-inline: calc((100% - 280px) / 2);
+    margin-top: 6px;
+
+    & + #{&} {
+      margin-top: op.$size-3;
+    }
+  }
+}
+
+.forceBreak {
+  @media (op.$md-n-above) {
+    display: none;
   }
 }
 
@@ -61,12 +74,27 @@
   top: 5px;
   margin-left: op.$size-5;
   @media (op.$md-n-below) {
-    text-align: right;
+    margin-right: op.$size-4;
+    margin-left: 0;
+    height: 100%;
+    display: inline-block;
+  }
+}
+
+.mapWrapper {
+  @media (op.$md-n-below) {
+    position: relative;
+    top: -14px;
   }
 }
 
 .detailText {
   @media (op.$md-n-below) {
+    text-align: left;
+    display: inline-block;
+    width: fit-content;
+    white-space: preline;
+    text-align: center;
   }
 }
 
