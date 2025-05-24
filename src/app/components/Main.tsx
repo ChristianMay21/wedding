@@ -22,7 +22,7 @@ const Main: React.FC<MainProps> = async (props) => {
           <AboutUs />
           <FAQ heading={'Invitation Information'} group={'invitation'} />
           <FAQ heading={'Schedule'} group={'schedule'} />
-          <FAQ heading={'Frequently asked questions'} group={'faq'} />
+          <FAQ heading={'Frequently Asked Questions'} group={'faq'} />
         </div>
       </div>
       <Footer />
