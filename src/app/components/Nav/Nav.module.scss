@@ -43,7 +43,7 @@
   }
 
   // Only show on mobile
-  @media (op.$md-n-above) {
+  @media (op.$lg-n-above) {
     display: none;
   }
 }
@@ -54,7 +54,7 @@
   font-family: op.$font-classical-humanist;
   z-index: 4;
 
-  @media (op.$md-n-above) {
+  @media (op.$lg-n-above) {
     background-color: rgba(55, 33, 94, 0);
     transition:
       background-color 600ms linear,
@@ -65,7 +65,7 @@
     }
   }
   // By default, hide on mobile
-  @media (op.$md-n-below) {
+  @media (op.$lg-n-below) {
     right: 0;
     height: 100vh;
     transition: width 600ms ease-in-out;
@@ -87,7 +87,7 @@
   padding-bottom: op.$size-6;
   font-size: op.$font-size-2;
 
-  @media (op.$md-n-above) {
+  @media (op.$lg-n-above) {
     @include visually-hidden;
   }
 }
@@ -123,7 +123,7 @@
   padding-top: op.$size-2;
   padding-left: 0;
 
-  @media (op.$md-n-below) {
+  @media (op.$lg-n-below) {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -137,7 +137,7 @@
   color: op.$stone-2;
   font-weight: 550;
 
-  @media (op.$md-n-below) {
+  @media (op.$lg-n-below) {
     padding-block: op.$size-2;
   }
 }
@@ -146,7 +146,7 @@
   color: op.$stone-2;
   text-decoration: none;
   font-weight: 400;
-  @media (op.$md-n-below) {
+  @media (op.$lg-n-below) {
     color: op.$stone-12;
     font-size: op.$font-size-4;
     white-space: nowrap;
