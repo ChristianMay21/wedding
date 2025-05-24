@@ -5,6 +5,8 @@ import styles from './AboutUs.module.scss'
 import './AboutUs.scss'
 import Image from 'next/image'
 import { Chrono } from 'react-chrono'
+import localFont from 'next/font/local'
+const permanentMarker = localFont({ src: './PermanentMarker.ttf' })
 
 interface AboutUsProps {}
 
@@ -26,9 +28,9 @@ const AboutUs: React.FC<AboutUsProps> = (props) => {
   }, [])
 
   return (
-    <div className={styles.aboutUs}>
+    <div className={`${styles.aboutUs} ${permanentMarker.className}`}>
       <h2 className={styles.heading}>Our Story</h2>
-      <div className={styles.scrollTarget} id="our-story"></div>
+      <div className={`${styles.scrollTarget}`} id="our-story"></div>
       <Chrono
         items={chronoItems}
         mode="VERTICAL_ALTERNATING"
