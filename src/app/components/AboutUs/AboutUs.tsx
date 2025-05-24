@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import styles from './AboutUs.module.scss'
+import './AboutUs.scss'
 import Image from 'next/image'
 import { Chrono } from 'react-chrono'
 

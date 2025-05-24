@@ -41,6 +41,9 @@
 
 .infoRow {
   margin-top: op.$size-5;
+  @media (op.$md-n-below) {
+    margin-top: op.$size-4;
+  }
 }
 
 .details {
@@ -111,11 +114,12 @@
   text-align: center;
   border-radius: 24px;
   background: linear-gradient(82.3deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
-  color: white;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   padding-block: 6px;
+  padding-bottom: 0;
   padding-inline: 12px;
-  box-shadow: op.$shadow-3;
   position: relative;
   overflow: hidden;
 
@@ -144,5 +148,6 @@
 }
 
 .rsvpDate {
-  margin-top: op.$size-4;
+  margin-top: op.$size-1;
+  font-size: op.$font-size-1;
 }

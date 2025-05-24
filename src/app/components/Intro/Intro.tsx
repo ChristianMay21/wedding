@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styles from './Intro.module.scss'
+
 import Image from 'next/image'
 import Section from '../Section/Section'
 import WordArt from '../WordArt/WordArt'
@@ -32,9 +33,9 @@ const Intro: React.FC<IntroProps> = (props) => {
         </div>
       </div>
       <div className={styles.rsvp}>
-        <a className={styles.rsvpLink} href="https://pp.events/b2BG587M">
-          <span className={styles.rsvpLinkContent}>RSVP Now</span>
-        </a>
+        <div className={styles.rsvpLink}>
+          <span className={styles.rsvpLinkContent}>To RSVP, check your email! </span>
+        </div>
         <div className={styles.rsvpDate}>Please RSVP by August 9th, 2025</div>
       </div>
     </div>
