@@ -34,9 +34,10 @@ const Intro: React.FC<IntroProps> = (props) => {
       </div>
       <div className={styles.rsvp}>
         <div className={styles.rsvpLink}>
-          <span className={styles.rsvpLinkContent}>To RSVP, check your email! </span>
+          <a href="/files/PARKING%20LOT%20-%20TWO%20LOTS%20.pdf" className={styles.rsvpLinkContent}>
+            🚗 NEW! Parking Information 🚗
+          </a>
         </div>
-        <div className={styles.rsvpDate}>Please RSVP by August 9th, 2025</div>
       </div>
     </div>
   )
