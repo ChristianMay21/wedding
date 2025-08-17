@@ -34,10 +34,14 @@ const Intro: React.FC<IntroProps> = (props) => {
       </div>
       <div className={styles.rsvp}>
         <div className={styles.rsvpLink}>
-          <a href="/files/PARKING%20LOT%20-%20TWO%20LOTS%20.pdf" className={styles.rsvpLinkContent}>
-            🚗 NEW! Parking Information 🚗
-          </a>
+          <span className={styles.rsvpLinkContent}>🚗 New! 🚗</span>
         </div>
+        <a
+          href="https://www.kimandchristian.wedding/files/PARKING%20LOT%20-%20TWO%20LOTS%20.pdf"
+          className={styles.rsvpDate}
+        >
+          Parking Information
+        </a>
       </div>
     </div>
   )
