@@ -113,7 +113,7 @@ $text-color-three: #6a2d56;
 
 .lineOne {
   text-shadow: join(
-    create-shadow-list(300, $text-color-one),
+    create-shadow-list(1200, $text-color-one),
     create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
@@ -125,7 +125,7 @@ $text-color-three: #6a2d56;
 
 .lineTwo {
   text-shadow: join(
-    create-shadow-list(300, $text-color-two),
+    create-shadow-list(1200, $text-color-two),
     create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
@@ -134,7 +134,7 @@ $text-color-three: #6a2d56;
 
 .lineThree {
   text-shadow: join(
-    create-shadow-list(300, $text-color-three),
+    create-shadow-list(1200, $text-color-three),
     create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
