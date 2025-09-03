@@ -114,7 +114,7 @@ $text-color-three: #6a2d56;
 .lineOne {
   text-shadow: join(
     create-shadow-list(1200, $text-color-one),
-    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    create-stepped-shadow-list(100, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
   //font-size: 3rem;
@@ -126,7 +126,7 @@ $text-color-three: #6a2d56;
 .lineTwo {
   text-shadow: join(
     create-shadow-list(1200, $text-color-two),
-    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    create-stepped-shadow-list(100, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
   animation-delay: 600ms;
@@ -135,7 +135,7 @@ $text-color-three: #6a2d56;
 .lineThree {
   text-shadow: join(
     create-shadow-list(1200, $text-color-three),
-    create-stepped-shadow-list(50, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
+    create-stepped-shadow-list(100, 10px, rgba(0, 0, 0, 0.4), 15px, -10px, 0px),
     comma
   );
   padding-bottom: var(--word-art-overlap);
